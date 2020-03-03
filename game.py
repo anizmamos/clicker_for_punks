@@ -1,7 +1,6 @@
 import pygame
 import random
 import time
-from os import path
 pygame.init()
 size = width, height = 800, 600
 ekran = pygame.display.set_mode(size)
@@ -26,6 +25,8 @@ def game_intro(score, k):
         ekran.blit(text, (50, 50))
         text2 = font.render("Улучшение(" + str(100 * k) + ") ->", 1, (50, 50, 100))
         ekran.blit(text2, (50, 100))
+        text2 = font.render("Осталось:" + str(score + 500), 1, (50, 50, 100))
+        ekran.blit(text2, (50, 150))
         if 800 > mouse[0] > 0 and 600 > mouse[1] > 500:
             pygame.draw.rect(ekran, (100, 100, 200), (0, 500, 800, 100))
             if pygame.mouse.get_pressed()[0]:
@@ -48,8 +49,8 @@ def game_intro(score, k):
             ekran.fill(pygame.Color("black"), (0, 0, 900, 500))
             text3 = font.render("Вы проиграли!", 1, (200, 0, 0))
             ekran.blit(text3, (250, 250))
-            text4 = font.render("Заново ", 1, (200, 0, 0))
-            ekran.blit(text4, (290, 450))
+            text4 = font.render("Заново", 1, (200, 0, 0))
+            ekran.blit(text4, (320, 450))
             if 800 > mouse[0] > 0 and 600 > mouse[1] > 500:
                 pygame.draw.rect(ekran, (100, 100, 200), (0, 500, 800, 100))
                 if pygame.mouse.get_pressed()[0]:
