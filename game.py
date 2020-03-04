@@ -1,6 +1,8 @@
 import pygame
 import random
 import time
+import sqlite3
+
 pygame.init()
 size = width, height = 800, 600
 ekran = pygame.display.set_mode(size)
@@ -13,6 +15,9 @@ def game_intro(score, k):
     while intro:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                handle = open("Text.txt", "w")
+                handle.write(str(score))
+                handle.close()
                 pygame.quit()
                 quit()
             elif event.type == pygame.KEYDOWN:
@@ -58,6 +63,9 @@ def game_intro(score, k):
         pygame.display.update()
 
 
-game_intro(0, 0)
+f = open("Text.txt", "r")
+data = f.read()
+f.close()
+game_intro(int(data), 0)
 pygame.display.flip()
 pygame.quit()
