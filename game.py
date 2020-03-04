@@ -9,7 +9,7 @@ pygame.display.set_caption("Clicker for punks")
 ekran.fill((255, 255, 255))
 
 
-def game_intro(score, k):
+def game(score, k):
     intro = True
     while intro:
         for event in pygame.event.get():
