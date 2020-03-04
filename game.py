@@ -1,7 +1,6 @@
 import pygame
 import random
 import time
-import sqlite3
 
 pygame.init()
 size = width, height = 800, 600
