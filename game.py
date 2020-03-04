@@ -75,6 +75,6 @@ def game(score, k):
 f = open("Text.txt", "r")
 data = f.read()
 f.close()
-game_intro(int(data), 0)
+game(int(data), 0)
 pygame.display.flip()
 pygame.quit()
