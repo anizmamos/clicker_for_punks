@@ -60,6 +60,16 @@ def game_intro(score, k):
                 pygame.draw.rect(ekran, (100, 100, 200), (0, 500, 800, 100))
                 if pygame.mouse.get_pressed()[0]:
                     score, k = 0, 0
+        if score > 1500:
+            ekran.fill(pygame.Color("black"), (0, 0, 900, 500))
+            text3 = font.render("Вы победили!", 1, (0, 200, 0))
+            ekran.blit(text3, (250, 250))
+            text4 = font.render("Заново", 1, (0, 200, 0))
+            ekran.blit(text4, (320, 450))
+            if 800 > mouse[0] > 0 and 600 > mouse[1] > 500:
+                pygame.draw.rect(ekran, (100, 100, 200), (0, 500, 800, 100))
+                if pygame.mouse.get_pressed()[0]:
+                    score, k = 0, 0
         pygame.display.update()
 
 
